@@ -78,7 +78,7 @@ The presented rules are the essence of a recursive descent analyzer, that is bas
 •	The second term, (100+56) is taken. At this point, the second sub-expression is analyzed recursively. The two factors are taken and, then, added. The result value is 156; </br >
 •	It is returned from the recursive call and then 156 is subtracted of 3. The answer is -153.</br > 
 There are two basic points to be remembered about this recursive vision of the expressions. First, the precedence of the operators is implicit in the way how the production rules are defined. Second, this method of analysis and building of expressions is quite similar to the way we humans evaluate mathematical expressions.</br >
-
+</br >
 **III.3 – Parse Tree**</br >
 </br >
 To illustrate the presented notions it is shown at figure 1 a parse tree referring to the recursive descent process for the expression: – A + 5 * B / (B – 1) [**2**].
