@@ -54,8 +54,10 @@ a+(b-a)/(1+exp(-c*(x-d)))</br >
 a+b*log(x1)+c*log(x1)**2+d*log(x2)+e*log(x2)**2</br >
 (x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*cos(x)+y*sin(y)+z*tan(z)*2/(x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*cos(x)+y*sin(y)+z*tan(z))*3+sqrt(x*y*z+x+y+z)*log10(sqrt(x*2+y*2+z*2)+x+y+z))</br >
 </br >
-At the development of a parser, an important concept is the operators and functions precedence [1]. Such concept states which operation must be performed first and, therefore, defines the sequence in which the operations must be executed with the purpose to obtain a correct evaluation of the interpreted expression. For the purposes of this evaluator it was assumed the precedence presented in table 1.
-[table 1]
+At the development of a parser, an important concept is the operators and functions precedence [1]. Such concept states which operation must be performed first and, therefore, defines the sequence in which the operations must be executed with the purpose to obtain a correct evaluation of the interpreted expression. For the purposes of this evaluator it was assumed the precedence presented in **Table 1**.
+
+![fortran2](https://user-images.githubusercontent.com/33180566/32405699-f38795b0-c148-11e7-8499-fa1c6ba6d87a.JPG)
+**Table 1**
 As an example, consider the evaluation of the following expression:</br >
 16 - 3 * 4.
 Naturally, this expression has as result the value 4. Although it seems to be an easy task to create a source code that calculates the final value for this specific string, the question that must be raised is the development of a code that gives the correct answer for any arbitrary expression. The operators can not simply always be taken in a left to right order. The problem becomes even more complex when brackets, exponentiation, variables and functions are added to the expression.
@@ -67,7 +69,7 @@ Expression  term [+term][-term];
 Term  factor [*factor][/factor];
 Factor  variable, number or (expression).
 At the terminology previously shown, the square brackets designate an optional element and the symbol “” means “produces”. Such rules are normally called “rules of expression production”. This way, it is possible to interpret the definition of a term as: “term produces factor multiplied by factor or factor divided by factor”. The operators’ precedence is implicit in the way how an expression is written. A parser must identify the priorities in the sequence of the operations and also must execute them in the identified sequence.
-To illustrate the utilization of the rules presented above, take the expression 6+3*D, in which it is possible to identify two terms: the first one is the number 6 and the second one is the product given by 3*D. The second term has two factors: 3 and D. As it is seen, these two factors are a number and a variable.
+To illustrate the utilization of the rules presented above, take the expression 6+3*D, in which it is possible to identify two terms: the first one is the number 6 and the second one is the product given by 3*D. The second term has two factors: 3 and D. As it is seen, these two factors are a number and a variable.</br >
 The presented rules are the essence of a recursive descent analyzer, that is basically a set of functions mutually recursive that operate in a linked way. At each step, the analyzer executes the specified operations in the algebraically correct sequence. In order to have a concrete idea of how this process works, analyze the following expression: </br >
 <p align="center">
 9/3 – (100 + 56)
@@ -144,7 +146,7 @@ Developed parser time (LABFit): 24.518s</br >
 **VI – Conclusions**</br >
 </br >
 From the analysis of the data presented in section V, it is possible to notice that the developed expression evaluator showed, for the desirable requirements, a performance superior than the other two existing ones, in all performed tests. In this way, the parser was not only used at the software LABFit, but is also being made available on the internet for the free utilization by the interested ones. The parser developers believe, along with the others ones involved in similar projects, in having helped to fill a gap in the libraries of Fortran, which is a language still quite used nowadays by engineers and scientists. 
-
+![fortran1](https://user-images.githubusercontent.com/33180566/32405690-d6ee6492-c148-11e7-909f-21591ee5c3a4.JPG)
 **References**</br >
 </br >
 [**1**] - A. V. Aho, R. Sethi, J. D. Ulman, Compilers – Principles, Techniques, and Tools, Addison-Wesley 
@@ -171,4 +173,6 @@ From the analysis of the data presented in section V, it is possible to notice t
 [**12**] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
           http://www.extension.hpg.com.br/.</br >
 [**13**] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
+
+
 
