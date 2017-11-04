@@ -78,10 +78,13 @@ The presented rules are the essence of a recursive descent analyzer, that is bas
 •	The second term, (100+56) is taken. At this point, the second sub-expression is analyzed recursively. The two factors are taken and, then, added. The result value is 156; </br >
 •	It is returned from the recursive call and then 156 is subtracted of 3. The answer is -153.</br > 
 There are two basic points to be remembered about this recursive vision of the expressions. First, the precedence of the operators is implicit in the way how the production rules are defined. Second, this method of analysis and building of expressions is quite similar to the way we humans evaluate mathematical expressions.</br >
-</br >
+
+
 **III.3 – Parse Tree**</br >
 </br >
 To illustrate the presented notions it is shown at figure 1 a parse tree referring to the recursive descent process for the expression: – A + 5 * B / (B – 1) [**2**].
+
+![fortran1](https://user-images.githubusercontent.com/33180566/32405690-d6ee6492-c148-11e7-909f-21591ee5c3a4.JPG)</br >
  [Figure 1]
 
 **IV – The developed Source Code**</br >
@@ -145,8 +148,8 @@ Developed parser time (LABFit): 24.518s</br >
 
 **VI – Conclusions**</br >
 </br >
-From the analysis of the data presented in section V, it is possible to notice that the developed expression evaluator showed, for the desirable requirements, a performance superior than the other two existing ones, in all performed tests. In this way, the parser was not only used at the software LABFit, but is also being made available on the internet for the free utilization by the interested ones. The parser developers believe, along with the others ones involved in similar projects, in having helped to fill a gap in the libraries of Fortran, which is a language still quite used nowadays by engineers and scientists. 
-![fortran1](https://user-images.githubusercontent.com/33180566/32405690-d6ee6492-c148-11e7-909f-21591ee5c3a4.JPG)</br >
+From the analysis of the data presented in section V, it is possible to notice that the developed expression evaluator showed, for the desirable requirements, a performance superior than the other two existing ones, in all performed tests. In this way, the parser was not only used at the software LABFit, but is also being made available on the internet for the free utilization by the interested ones. The parser developers believe, along with the others ones involved in similar projects, in having helped to fill a gap in the libraries of Fortran, which is a language still quite used nowadays by engineers and scientists.</br >
+
 **References**</br >
 </br >
 [**1**] - A. V. Aho, R. Sethi, J. D. Ulman, Compilers – Principles, Techniques, and Tools, Addison-Wesley 
