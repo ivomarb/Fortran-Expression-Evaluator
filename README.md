@@ -1,7 +1,8 @@
-AN EXPRESSION EVALUATOR IN FORTRAN
+**AN EXPRESSION EVALUATOR IN FORTRAN**
 
 
-Wilton Pereira da Silvaa*, Cleide M. D. P. S. Silvab, Ivomar Brito Soaresc, José Luís do Nascimentod, Cleiton Diniz Pereira da Silva e Silvae
+
+Wilton Pereira da Silva<sup>a*</sup>, Cleide M. D. P. S. Silvab, Ivomar Brito Soaresc, José Luís do Nascimentod, Cleiton Diniz Pereira da Silva e Silvae
 
 a, b Professors of the Department of Physics
 c, d Electrical Engineering and Scientific Initiation Scholarship Students – PIBIC – CNPq
