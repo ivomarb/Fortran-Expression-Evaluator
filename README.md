@@ -14,6 +14,7 @@ e Master’s Degree in Electronic Engineering, Aeronautics Institute of Technolo
 Marechal Eduardo Gomes Sq., 50, Vila das Acácias, ZIP Code 12228-900, São José dos Campos, SP, Brazil</br >
 
 **Abstract**</br >
+</br >
 This paper aims to communicate the development of an expression evaluator (function parser) for the Fortran programming language, to make its source code available and to show the results of a comparative analysis among its performance and two other available ones (the only ones found in successive searches on the internet), in open source, for this language. The developed parser presented a performance significantly superior, in speed, to the similar tested.
 
 **Keywords**</br >
