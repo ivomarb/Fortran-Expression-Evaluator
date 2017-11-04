@@ -159,7 +159,7 @@ From the analysis of the data presented in section V, it is possible to notice t
         Woburn MA, USA, 2002.</br >
 [**6**] - S. Midgley, Department of Physics, University of Western Australia, “Australian Parser”, online
         available on the internet at http://www.netspace.net.au/~smidgley/fortran/.</br >
-[**7**] - H. Schildt, C Completo e Total, Makron Books, 3rd edition, pp. 584 – 606, 1996.
+[**7**] - H. Schildt, C Completo e Total, Makron Books, 3rd edition, pp. 584 – 606, 1996.</br >
 [**8**] - R. Schmehl, “German Parser”, online, available on the internet at
           http://www.its.uni-karlsruhe.de/~schmehl/functionparserE.html.</br >
 [**9**] - W. P. Silva, C. M. D. P. S. Silva, LAB Fit Curve Fitting Software, online, available on the internet at   
@@ -172,51 +172,3 @@ From the analysis of the data presented in section V, it is possible to notice t
           http://www.extension.hpg.com.br/.</br >
 [**13**] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure Legends
-Fig. 1. Parse tree for the expression – A + 5 * B / (B – 1).
-
-Tables
-Higher Precedence	Brackets
-	Functions
-	** or  ^
-	*, /
-Lower Precedence	+, -
-Tab. 1. Operators Precedence
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-Figure 1
