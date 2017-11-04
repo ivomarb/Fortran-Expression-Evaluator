@@ -1,12 +1,12 @@
 <p align="center">
-**AN EXPRESSION EVALUATOR IN FORTRAN**
+AN EXPRESSION EVALUATOR IN FORTRAN
 </p>
 
 
-Wilton Pereira da Silva<sup>a*</sup>, Cleide M. D. P. S. Silvab, Ivomar Brito Soaresc, José Luís do Nascimentod, Cleiton Diniz Pereira da Silva e Silvae
+Wilton Pereirad Silva<sup>a*</sup>, Cleide M. D. P. S. Silva<sup>b</sup>, Ivomar Brito Soares<sup>c</sup>, José Luís do Nascimento<sup>d</sup>, Cleiton Diniz Pereira da Silva e Silva<sup>e</sup>
 
-a, b Professors of the Department of Physics
-c, d Electrical Engineering and Scientific Initiation Scholarship Students – PIBIC – CNPq
+<sup>a, b</sup> Professors of the Department of Physics
+<sup>c</sup>, d Electrical Engineering and Scientific Initiation Scholarship Students – PIBIC – CNPq
 Sciences and Technology Center
 Federal University of Campina Grande
 Aprígio Veloso St., 882, ZIP Code 58109-970, Campina Grande, PB, Brazil
