@@ -3,7 +3,7 @@
 </p>
 
 
-Wilton Pereirad Silva<sup>a*</sup>, Cleide M. D. P. S. Silva<sup>b</sup>, Ivomar Brito Soares<sup>c</sup>, José Luís do Nascimento<sup>d</sup>, Cleiton Diniz Pereira da Silva e Silva<sup>e</sup></br >
+Wilton Pereira da Silva<sup>a*</sup>, Cleide M. D. P. S. Silva<sup>b</sup>, Ivomar Brito Soares<sup>c</sup>, José Luís do Nascimento<sup>d</sup>, Cleiton Diniz Pereira da Silva e Silva<sup>e</sup></br >
 
 <sup>a, b</sup> Professors of the Department of Physics</br >
 <sup>c,d</sup> Electrical Engineering and Scientific Initiation Scholarship Students – PIBIC – CNPq</br >
