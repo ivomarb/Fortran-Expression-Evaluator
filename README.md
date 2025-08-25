@@ -100,7 +100,7 @@ During the coding process of the parser its developers got known, through the in
 
 The tests consisted on the realization of five million iterations for twenty five distinct expressions, measuring the time that each evaluator took to perform such task. The tests were performed in a computer Intel Pentium III, 128 Mbytes of RAM memory and the compilation was done at the Compaq Visual Fortran (CVF 6.5) studio, using the QuickWin Application option. The elapsed time for the direct calculation, which takes the smallest execution time, of each compiled expression was also measured in order to have an idea of the slowness of a Fortran coded parser execution. The performance of the evaluators was analyzed only in terms of the elapsed time for the tasks execution, because the numerical results of all of them were equivalent and compatible with the numerical result of the compiled expression. The complete report for all the expressions was made available on the internet [**11**]. Next, it will be shown the obtained results for five, among the twenty five, tested expressions. 
 
-1st Expression: </br >
+_1st Expression_: </br >
 (x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*cos(x)+y*sin(y)+z*tan(z)*2/(x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*
 cos(x)+y*sin(y)+z*tan(z))*3+sqrt(x*y*z+x+y+z)*log10(sqrt(x*2+y*2+z*2)+x+y+z))</br >
 For x = 0.175, y = 0.110 and z = 0.900:</br >
@@ -110,7 +110,7 @@ Developed parser time (LABFit): 48.119s</br >
 “Australian parser” time (Stuart Midgley): 178.060s</br >
 “German parser” time (Roland Schmehl): 77.681s</br >
 
-2nd Expression:</br >
+_2nd Expression_:</br >
 a+b*x1</br >
 For a = 0.900, b = 0.100 e x1 = 0.508:</br >
 Final Result: 0.9508000</br >
@@ -119,7 +119,7 @@ Developed parser time (LABFit): 1.872s</br >
 “Australian parser” time (Stuart Midgley): 22.242s</br >
 “German parser” time (Roland Schmehl): 3.205s</br >
 
-3rd Expression:</br >
+_3rd Expression_:</br >
 cosh(log(abs(y*z+x**2+x1**x2)))+a*d*(exp(c*f)+154.3)</br >
 For x = 0.175, y = 0.110, z = 0.900, a = 0.900, c = 0.110, d = 0.120, f = 0.140, x1 = 0.508 and x2 = 30.000:</br >
 Final Result: 20.69617</br ></br >
@@ -128,7 +128,7 @@ Developed parser time (LABFit): 17.114s</br >
 “Australian parser” time (Stuart Midgley): 59.876s</br >
 “German parser” time (Roland Schmehl): 23.664s</br >
 
-4th Expression:</br >
+_4th Expression_:</br >
 atan(sinh(log(abs(exp(z/x)*sqrt(y+a**c+f*e)))))</br >
 For x = 0.175, y = 0.110, z = 0.900, a = 0.900, c = 0.110, f = 0.140 and e = 0.130:</br >
 Final Result: 1.559742</br >
@@ -137,7 +137,7 @@ Developed parser time (LABFit): 15.573s</br >
 “Australian parser” time (Stuart Midgley): 53.958s</br >
 “German parser” time (Roland Schmehl): 20.359s</br >
 
-5th Expression:</br >
+_5th Expression_:</br >
 atan(sinh(log(abs(exp(z/x)*sqrt(y+a**c+f*e)))))*cos(log(abs(sqrt(y+a**c+f*e))))</br >
 For x = 0.175, y = 0.110, z = 0.900, a = 0.900, c = 0.110, f = 0.140 and e = 0.130:</br >
 Final Result: 1.557368</br >
