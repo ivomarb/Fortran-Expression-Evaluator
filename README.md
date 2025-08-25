@@ -184,4 +184,8 @@ From the analysis of the data presented in section V, it is possible to notice t
 ![labfit6](https://user-images.githubusercontent.com/33180566/32405774-5f469d04-c14a-11e7-9dc1-ff6e03fe80de.jpg)</br >
 **Figure 2** - LabFit screenshots.
 
+**Other Resources**</br>
+
+* The [Calmat: a Fortran Equation Parser Involving Matrix Operations](https://github.com/hassaniriad/calmat) is based on this interpreter.
+
 
