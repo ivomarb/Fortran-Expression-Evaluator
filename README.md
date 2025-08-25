@@ -176,13 +176,7 @@ From the analysis of the data presented in section V, it is possible to notice t
 [**12**] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
           http://www.extension.hpg.com.br/.</br >
 [**13**] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
-![labfit1](https://user-images.githubusercontent.com/33180566/32405745-ed743984-c149-11e7-9864-4e7e454ef7fb.gif)
-![labfit2](https://user-images.githubusercontent.com/33180566/32405752-108e5206-c14a-11e7-9856-a70c5b2052f1.jpg)
-![labfit3](https://user-images.githubusercontent.com/33180566/32405755-1fcf2c90-c14a-11e7-8895-c7dcb84a4f8a.jpg)
-![labfit4](https://user-images.githubusercontent.com/33180566/32405760-3a576672-c14a-11e7-9807-b9ddf60c4669.jpg)
-![labfit5](https://user-images.githubusercontent.com/33180566/32405766-4b73e638-c14a-11e7-9e2e-590e9640d264.jpg)
-![labfit6](https://user-images.githubusercontent.com/33180566/32405774-5f469d04-c14a-11e7-9dc1-ff6e03fe80de.jpg)</br >
-**Figure 2** - LabFit screenshots.
+
 
 # Other Resources
 
