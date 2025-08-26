@@ -66,11 +66,17 @@ Naturally, this expression has as result the value 4. Although it seems to be an
 ## III.2 – Analysis of an Expression
 </br >
 There are several possibilities to analyze and build a mathematical expression. In the case of a recursive descent parser, the expressions are imagined as being recursive structures, that means, such expressions are defined in terms of themselves. Just to have a basic notion about the rules and the ideas used in the development of an evaluator; imagine an expression containing the following elements: +, -, *, /. In this case, the expression can be defined, from the reading of a string, with the utilization of the following basic rules [4]:
-Expression  term [+term][-term];
-Term  factor [*factor][/factor];
-Factor  variable, number or (expression).
+</br>
+<p align="center">
+Expression -> term [+term][-term];
+Term -> factor [*factor][/factor];
+Factor -> variable, number or (expression).
+ </p>
+</br>
 At the terminology previously shown, the square brackets designate an optional element and the symbol “” means “produces”. Such rules are normally called “rules of expression production”. This way, it is possible to interpret the definition of a term as: “term produces factor multiplied by factor or factor divided by factor”. The operators’ precedence is implicit in the way how an expression is written. A parser must identify the priorities in the sequence of the operations and also must execute them in the identified sequence.
+</br>
 To illustrate the utilization of the rules presented above, take the expression 6+3*D, in which it is possible to identify two terms: the first one is the number 6 and the second one is the product given by 3*D. The second term has two factors: 3 and D. As it is seen, these two factors are a number and a variable.</br >
+</br>
 The presented rules are the essence of a recursive descent analyzer, that is basically a set of functions mutually recursive that operate in a linked way. At each step, the analyzer executes the specified operations in the algebraically correct sequence. In order to have a concrete idea of how this process works, analyze the following expression: </br >
 <p align="center">
 9/3 – (100 + 56)
@@ -78,8 +84,8 @@ The presented rules are the essence of a recursive descent analyzer, that is bas
 •	Initially the first term, 9/3, is taken. Then, each factor is taken and the integer division is executed. The result value is 3;</br > 
 •	The second term, (100+56) is taken. At this point, the second sub-expression is analyzed recursively. The two factors are taken and, then, added. The result value is 156; </br >
 •	It is returned from the recursive call and then 156 is subtracted of 3. The answer is -153.</br > 
+</br>
 There are two basic points to be remembered about this recursive vision of the expressions. First, the precedence of the operators is implicit in the way how the production rules are defined. Second, this method of analysis and building of expressions is quite similar to the way we humans evaluate mathematical expressions.</br >
-
 
 ## III.3 – Parse Tree
 </br >
