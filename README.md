@@ -57,9 +57,10 @@ a+b*log(x1)+c*log(x1)**2+d*log(x2)+e*log(x2)**2</br >
 </br >
 At the development of a parser, an important concept is the operators and functions precedence [1]. Such concept states which operation must be performed first and, therefore, defines the sequence in which the operations must be executed with the purpose to obtain a correct evaluation of the interpreted expression. For the purposes of this evaluator it was assumed the precedence presented in **Table 1**.
 <p align="center">
-![fortran2](https://user-images.githubusercontent.com/33180566/32405699-f38795b0-c148-11e7-8499-fa1c6ba6d87a.JPG)</br >
-**Table 1**</br >
+![fortran2](https://user-images.githubusercontent.com/33180566/32405699-f38795b0-c148-11e7-8499-fa1c6ba6d87a.JPG)
+**Table 1**
 </p>
+</br>
 As an example, consider the evaluation of the following expression:</br >
 16 - 3 * 4.
 Naturally, this expression has as result the value 4. Although it seems to be an easy task to create a source code that calculates the final value for this specific string, the question that must be raised is the development of a code that gives the correct answer for any arbitrary expression. The operators can not simply always be taken in a left to right order. The problem becomes even more complex when brackets, exponentiation, variables and functions are added to the expression.
