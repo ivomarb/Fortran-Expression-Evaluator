@@ -120,7 +120,7 @@ Compiler direct calculation time: 9.644s</br >
 Developed parser time (LABFit): 48.119s</br >
 “Australian parser” time (Stuart Midgley): 178.060s</br >
 “German parser” time (Roland Schmehl): 77.681s</br >
-
+</br>
 2nd Expression:</br >
 a+b*x1</br >
 For a = 0.900, b = 0.100 e x1 = 0.508:</br >
