@@ -129,7 +129,7 @@ Compiler direct calculation time: 0.080s</br >
 Developed parser time (LABFit): 1.872s</br >
 “Australian parser” time (Stuart Midgley): 22.242s</br >
 “German parser” time (Roland Schmehl): 3.205s</br >
-
+</br>
 3rd Expression:</br >
 cosh(log(abs(y*z+x**2+x1**x2)))+a*d*(exp(c*f)+154.3)</br >
 For x = 0.175, y = 0.110, z = 0.900, a = 0.900, c = 0.110, d = 0.120, f = 0.140, x1 = 0.508 and x2 = 30.000:</br >
@@ -138,7 +138,7 @@ Compiler direct calculation time: 7.150s</br >
 Developed parser time (LABFit): 17.114s</br >
 “Australian parser” time (Stuart Midgley): 59.876s</br >
 “German parser” time (Roland Schmehl): 23.664s</br >
-
+</br>
 4th Expression:</br >
 atan(sinh(log(abs(exp(z/x)*sqrt(y+a**c+f*e)))))</br >
 For x = 0.175, y = 0.110, z = 0.900, a = 0.900, c = 0.110, f = 0.140 and e = 0.130:</br >
@@ -147,7 +147,7 @@ Compiler direct calculation time: 9.533s</br >
 Developed parser time (LABFit): 15.573s</br >
 “Australian parser” time (Stuart Midgley): 53.958s</br >
 “German parser” time (Roland Schmehl): 20.359s</br >
-
+</br>
 5th Expression:</br >
 atan(sinh(log(abs(exp(z/x)*sqrt(y+a**c+f*e)))))*cos(log(abs(sqrt(y+a**c+f*e))))</br >
 For x = 0.175, y = 0.110, z = 0.900, a = 0.900, c = 0.110, f = 0.140 and e = 0.130:</br >
