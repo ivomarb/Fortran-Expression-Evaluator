@@ -99,6 +99,7 @@ To illustrate the presented notions it is shown at figure 1 a parse tree referri
 </br >
 The source code was developed to attend the pre-defined basic requirements in section II for the specific needs of the LABFit, according to the rules that were established in section III. The final result is available at the web site indicated at the Ref. [12].
 </br>
+</br>
 Basically, the code is constituted of the following parts: 1) the parser itself comprised in a module called interpreter.f90, 2) the main program, called test.f90, containing some examples. Once the main program has the information about the string, it calls a subroutine of the module interpreter.f90, called “init”, whose function is to make the interpretation, that means, the building of the mathematical expression. With this task accomplished, the function that evaluates the expression, called “evaluate”, is evoked and the value of the expression is returned for a set of variable values. The process of evaluating an expression can be repeated for other set of variables, without the need of rebuilding the expression, for how many times it may be necessary. It is also possible, in the same execution, to change the string and to repeat the interpretation and evaluation processes for the new specified expression. To do so, it is only needed to call the subroutine named “destroyfunc”, before informing the new string and repeating the process previously described.</br >
 </br>
 The philosophy used at the development of this parser was the same normally used in the development of modules, in a general way. This means that the Fortran programmers, which will use the developed parser in their programs, don’t have to know its source code. They just need to add the module interpreter.f90 in their projects, define the string and call the subroutine “init”, followed by the calling of the function “evaluate” as it is shown in the example program test.f90.
@@ -106,9 +107,9 @@ The philosophy used at the development of this parser was the same normally used
 # V – Comparative Analysis
 </br >
 During the coding process of the parser its developers got known, through the internet, of another similar one developed in Germany [8], just finished. The performance of this parser was tested by adding it to the LABFit and the results were considered good.  Moreover, it was performed a set of tests to compare the performance of the developed evaluator and of the two other ones ([6] and [8]). The tests results would indicate the appropriated parser to be used at the curve fitting software.</br >
-
+</br>
 The tests consisted on the realization of five million iterations for twenty five distinct expressions, measuring the time that each evaluator took to perform such task. The tests were performed in a computer Intel Pentium III, 128 Mbytes of RAM memory and the compilation was done at the Compaq Visual Fortran (CVF 6.5) studio, using the QuickWin Application option. The elapsed time for the direct calculation, which takes the smallest execution time, of each compiled expression was also measured in order to have an idea of the slowness of a Fortran coded parser execution. The performance of the evaluators was analyzed only in terms of the elapsed time for the tasks execution, because the numerical results of all of them were equivalent and compatible with the numerical result of the compiled expression. The complete report for all the expressions was made available on the internet [11]. Next, it will be shown the obtained results for five, among the twenty five, tested expressions. 
-
+</br>
 _1st Expression_: </br >
 (x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*cos(x)+y*sin(y)+z*tan(z)*2/(x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*
 cos(x)+y*sin(y)+z*tan(z))*3+sqrt(x*y*z+x+y+z)*log10(sqrt(x*2+y*2+z*2)+x+y+z))</br >
