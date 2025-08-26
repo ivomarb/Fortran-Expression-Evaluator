@@ -67,7 +67,7 @@ Naturally, this expression has as result the value 4. Although it seems to be an
 </br >
 There are several possibilities to analyze and build a mathematical expression. In the case of a recursive descent parser, the expressions are imagined as being recursive structures, that means, such expressions are defined in terms of themselves. Just to have a basic notion about the rules and the ideas used in the development of an evaluator; imagine an expression containing the following elements: +, -, *, /. In this case, the expression can be defined, from the reading of a string, with the utilization of the following basic rules [4]:
 </br>
-
+</br>
 <p align="center">
 Expression -> term [+term][-term];</br>
 Term -> factor [*factor][/factor];</br>
