@@ -189,7 +189,7 @@ From the analysis of the data presented in section V, it is possible to notice t
 [11] - I. B. Soares, J. L. Nascimento, W. P. Silva, Full Report of the Performed Tests, online, 
           available on the Internet at http://www.extension.hpg.com.br/.</br >
 [12] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
-          http://www.extension.hpg.com.br/.</br >
+          https://github.com/ivomarb/Fortran-Expression-Evaluator/tree/master.</br >
 [13] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
 
 
