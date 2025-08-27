@@ -183,7 +183,7 @@ From the analysis of the data presented in section V, it is possible to notice t
 [8] - R. Schmehl, “German Parser”, online, available on the internet at
           http://www.its.uni-karlsruhe.de/~schmehl/functionparserE.html.</br >
 [9] - W. P. Silva, C. M. D. P. S. Silva, LAB Fit Curve Fitting Software, online, available on the internet at   
-        http://labfit.net</br >
+        http://labfit.net.</br >
 [10] - W. P. Silva et al, VFortran Tutorial, online, available on the internet at     
            http://www.extension.hpg.com.br/.</br >
 [11] - I. B. Soares, J. L. Nascimento, W. P. Silva, Full Report of the Performed Tests, online, 
