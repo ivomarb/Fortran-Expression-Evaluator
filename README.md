@@ -2,6 +2,41 @@
 <h1>AN EXPRESSION EVALUATOR / INTERPRETER IN FORTRAN</h1>
 </p>
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#i--instroduction">I - Introduction/a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting started 💗</a>
+      <ul>
+        <li>
+          <a href="#prerequisites-">Prerequisites 🍪</a>
+        </li>
+        <li>
+          <a href="#setup-and-deployment-">Setup And Deployment 🔧</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#support-my-work">Support my work</a>
+    </li>
+    <li>
+      <a href="#showcase-">Showcase 🚀</a>
+    </li>
+    <li>
+      <a href="#versão-em-português-brazil">Versão em Português :brazil:</a>
+    </li>
+    <li>
+      <a href="#notice">Notice</a>
+    </li>
+    <li>
+      <a href="#stargazers-over-time">Stargazers over time</a>
+    </li>
+  </ol>
+</details>
 
 Wilton Pereira da Silva<sup>a*</sup>, Cleide M. D. P. S. Silva<sup>b</sup>, Ivomar Brito Soares<sup>c</sup>, José Luís do Nascimento<sup>d</sup>, Cleiton Diniz Pereira da Silva e Silva<sup>e</sup></br >
 
