@@ -17,13 +17,13 @@
     </li>
     <ul>
         <li>
-          <a href="#iii.1---elements-of-an-expression-precedence">III.1 - Elements of an Expression: Precedence</a>
+          <a href="#iii1---elements-of-an-expression-precedence">III.1 - Elements of an Expression: Precedence</a>
         </li>
         <li>
-          <a href="#iii.2---analysis-of-an-expression">III.2 – Analysis of an Expression</a>
+          <a href="#iii2---analysis-of-an-expression">III.2 – Analysis of an Expression</a>
         </li>
         <li>
-          <a href="#iii.3---parse-tree">III.3 – Parse Tree</a>
+          <a href="#iii3---parse-tree">III.3 – Parse Tree</a>
         </li>
     </ul>
     <li>
