@@ -7,7 +7,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#i--instroduction">I - Introduction/a>
+      <a href="#i--instroduction">I - Introduction</a>
     </li>
     <li>
       <a href="#getting-started">Getting started 💗</a>
