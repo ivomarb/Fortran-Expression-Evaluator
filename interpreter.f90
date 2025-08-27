@@ -938,7 +938,7 @@ if(trim(funcao) == 'erro') return
 do i = 1, nchar-1
   do j = 1, 36
     if(funcao(i:i) == '0' .or. funcao(i:i) == 'n' .or. funcao(i:i) == 's' .or. funcao(i:i) == 'h' .or. funcao(i:i) == 'd' .or. funcao(i:i) == 'g' .or. funcao(i:i) == 't' .or. funcao(i:i) == 'p' .or. funcao(i:i) == 'r') then
-      !n�o testa, pode ser uma das fun��es definidas
+      !Don't test, it could be one of the defined functions
 	else
       if(funcao(i:i+1) == variav(j:j)//'(') funcao = 'erro'
     end if
