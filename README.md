@@ -236,7 +236,7 @@ From the analysis of the data presented in section V, it is possible to notice t
           http://www.its.uni-karlsruhe.de/~schmehl/functionparserE.html.</br >
 [9] - W. P. Silva, C. M. D. P. S. Silva, LAB Fit Curve Fitting Software, online, available on the internet at   
         http://labfit.net.</br >
-[10] - W. P. Silva et al, [VFortran Tutorial](https://admin.abenge.org.br/cobenge/legado/arquivos/13/artigos/7_43_979.pdf).
+[10] - W. P. Silva et al, [VFortran Tutorial](https://admin.abenge.org.br/cobenge/legado/arquivos/13/artigos/7_43_979.pdf).</br >
 [11] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
           https://github.com/ivomarb/Fortran-Expression-Evaluator/tree/master.</br >
 [12] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
