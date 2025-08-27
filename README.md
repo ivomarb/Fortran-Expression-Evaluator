@@ -13,7 +13,7 @@
       <a href="#ii---requirements-of-the-expression-evaluator">II - Requirements of the Expression Evaluator</a>
     </li>
     <li>
-      <a href="#iii---valuating-expressions-general-notions<">III - Evaluating Expressions: General Notions</a>
+      <a href="#iii---evaluating-expressions-general-notions<">III - Evaluating Expressions: General Notions</a>
     </li>
     <ul>
         <li>
