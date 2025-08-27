@@ -18,9 +18,9 @@ module interpreter
 	integer			  ,	 dimension(:), allocatable, private	:: operations
 	integer,										private	:: n 
 	integer,										private	:: ntokens = 0	
-	character,           dimension(:), pointer,		private :: opaddsub			!Operador
+	character,           dimension(:), pointer,		private :: opaddsub			!Operator
 	integer,										private	:: isaddsub = 1
-	character,           dimension(:), pointer,		private :: opmuldiv			!Operador
+	character,           dimension(:), pointer,		private :: opmuldiv			!Operator
 	integer,										private	:: ismuldiv = 1
 	character(len=255),								private :: toke
 	integer,										private :: itoke = 1
@@ -938,7 +938,7 @@ if(trim(funcao) == 'erro') return
 do i = 1, nchar-1
   do j = 1, 36
     if(funcao(i:i) == '0' .or. funcao(i:i) == 'n' .or. funcao(i:i) == 's' .or. funcao(i:i) == 'h' .or. funcao(i:i) == 'd' .or. funcao(i:i) == 'g' .or. funcao(i:i) == 't' .or. funcao(i:i) == 'p' .or. funcao(i:i) == 'r') then
-      !não testa, pode ser uma das funções definidas
+      !nï¿½o testa, pode ser uma das funï¿½ï¿½es definidas
 	else
       if(funcao(i:i+1) == variav(j:j)//'(') funcao = 'erro'
     end if
@@ -1363,7 +1363,7 @@ ilength = len(trim(text))
 
   do k = 1,(ilength-1)
    
-   !converte ^ em **, caso o usuário digite ^
+   !converte ^ em **, caso o usuï¿½rio digite ^
    if(text(k:k) == '^') then
     text = text(1:k-1)//'**'//text(k+1:ilength)
 	ilength = ilength + 1
@@ -1384,7 +1384,7 @@ ilength = len(trim(text))
 	item = 1
    end if
 
-   !converte vírgula em ponto, caso o usuário digite vírgula
+   !converte vï¿½rgula em ponto, caso o usuï¿½rio digite vï¿½rgula
    if(text(k:k) == ',') then
     text = text(1:k-1)//'.'//text(k+1:ilength)
 	item = 1
@@ -1398,13 +1398,13 @@ ilength = len(trim(text))
 
  if(ilength > 2) then
 
-   !penúltimo
+   !second to last
    if(text((ilength-1):(ilength-1)) == '^') then
     text = text(1:ilength-2)//'**'//text(ilength:ilength)
 	item = 1
    end if
 
-   !penúltimo
+   !second to last
    if(text((ilength-1):(ilength-1)) == ',') then
     text = text(1:ilength-2)//'.'//text(ilength:ilength)
 	item = 1
@@ -1415,7 +1415,7 @@ ilength = len(trim(text))
 
  if(ilength > 1) then
   
-   !último
+   !last
    if(text((ilength):(ilength)) == ',') then
     text = text(1:ilength-1)//'.'
 	item = 1
