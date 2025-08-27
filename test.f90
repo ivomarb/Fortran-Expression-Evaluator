@@ -8,7 +8,7 @@ program test
 !
 !	Authors:
 !		Wilton P. Silva - wiltonps@uol.com.br
-!		Ivomar B. Soares - ivomarbrito@uol.com.br
+!		Ivomar B. Soares - ivomarbsoares@gmail.com
 !
 !	Disclaimer:
 !		This code is provided "as is" no warranty. It should not be used for 
@@ -16,7 +16,7 @@ program test
 !       of the user.
 !
 !   For Future Version:
-!       Send me (wiltonps@uol.com.br) your email with message "about parser". 
+!       Send us your email with message "about parser". 
 !
 !
 use interpreter
