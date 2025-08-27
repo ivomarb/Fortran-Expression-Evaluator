@@ -13,11 +13,11 @@
       <a href="#ii---requirements-of-the-expression-evaluator">II - Requirements of the Expression Evaluator</a>
     </li>
     <li>
-      <a href="#iii---valuating-expressions---general-notions<">III - Evaluating Expressions - General Notions</a>
+      <a href="#iii---valuating-expressions:-general-notions<">III - Evaluating Expressions: General Notions</a>
     </li>
     <ul>
         <li>
-          <a href="#iii.1---elements-of-an-expression---precedence">III.1 - Elements of an Expression - Precedence</a>
+          <a href="#iii.1---elements-of-an-expression:-precedence">III.1 - Elements of an Expression: Precedence</a>
         </li>
         <li>
           <a href="#iii.2---analysis-of-an-expression<">III.2 – Analysis of an Expression</a>
@@ -77,12 +77,12 @@ The DOS version of the software didn’t need an expression evaluator because th
 </br >
 In a curve fitting procedure, using the non-linear regression technique, there is an interactive process where an optimum point is obtained through a convergence condition. Such process can involve thousands of iterations, which takes time. This requires that the code for the evaluator of a given expression be efficient and optimized. For the specific case of regression, a parser must attend two requirements. The first one is that, once read the string with the fitting function, the building process of the corresponding arithmetical expression must be done only once, right after the reading of the string. This guarantees great time savings in an iterative process. The second requirement is that, once the expression to be evaluated was interpreted and built, the calculation of such expression for a set of variable values be done in an optimized way, which guarantees the needed speed in a process that may be repeated hundreds of thousands of times.
 
-# III - Evaluating Expressions - General Notions
+# III - Evaluating Expressions: General Notions
 </br >
 The procedure in which a program receives a string containing a numerical expression such as, for example, (4*3)/10^2, and returns the appropriate answer is generically called expression evaluation. Such procedure is the base of all compilers and language interpreters, of mathematical programs and of everything that needs to interpret mathematical expressions in a way that the computer can handle them.
 The algorithm used for the development of the parser was the recursive descent. Such algorithm is described in several books about the C language (for example [7]), and was adapted to Fortran. As the objective of this paper is just to communicate the development of a parser coded in Fortran and to make available its source code (and not to discuss the algorithm itself), it will only be shown the basic ideas of the performed study.
 
-## III.1 - Elements of an Expression - Precedence
+## III.1 - Elements of an Expression: Precedence
 </br >
 For the purposes of the development of a parser, it should initially be stated that mathematical expressions are formed by the following items: </br >
 </br >
