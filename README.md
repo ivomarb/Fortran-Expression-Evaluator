@@ -13,11 +13,11 @@
       <a href="#ii---requirements-of-the-expression-evaluator">II - Requirements of the Expression Evaluator</a>
     </li>
     <li>
-      <a href="#iii---valuating-expressions:-general-notions<">III - Evaluating Expressions: General Notions</a>
+      <a href="#iii---valuating-expressions-general-notions<">III - Evaluating Expressions: General Notions</a>
     </li>
     <ul>
         <li>
-          <a href="#iii.1---elements-of-an-expression:-precedence">III.1 - Elements of an Expression: Precedence</a>
+          <a href="#iii.1---elements-of-an-expression-precedence">III.1 - Elements of an Expression: Precedence</a>
         </li>
         <li>
           <a href="#iii.2---analysis-of-an-expression<">III.2 – Analysis of an Expression</a>
