@@ -1,5 +1,5 @@
 <p align="center">
-<h1>AN EXPRESSION EVALUATOR / INTERPRETER IN FORTRAN</h1>
+<h1>AN EXPRESSION EVALUATOR / INTERPRETER / PARSER IN FORTRAN</h1>
 </p>
 
 ![GitHub contributors](https://img.shields.io/github/contributors/ivomarb/Fortran-Expression-Evaluator?color=ffcc66&style=for-the-badge)
