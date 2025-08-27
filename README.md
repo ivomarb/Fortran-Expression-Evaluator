@@ -13,11 +13,11 @@
       <a href="#ii---requirements-of-the-expression-evaluator">II - Requirements of the Expression Evaluator</a>
     </li>
     <li>
-      <a href="#iii---valuating-expressions---general-notions<">III – Evaluating Expressions – General Notions</a>
+      <a href="#iii---valuating-expressions---general-notions<">III - Evaluating Expressions - General Notions</a>
     </li>
     <ul>
         <li>
-          <a href="#iii.1---elements-of-an-expression---precedence">III.1 – Elements of an Expression - Precedence</a>
+          <a href="#iii.1---elements-of-an-expression---precedence">III.1 - Elements of an Expression - Precedence</a>
         </li>
         <li>
           <a href="#iii.2---analysis-of-an-expression<">III.2 – Analysis of an Expression</a>
@@ -111,7 +111,7 @@ As an example, consider the evaluation of the following expression:</br >
 16 - 3 * 4.
 Naturally, this expression has as result the value 4. Although it seems to be an easy task to create a source code that calculates the final value for this specific string, the question that must be raised is the development of a code that gives the correct answer for any arbitrary expression. The operators can not simply always be taken in a left to right order. The problem becomes even more complex when brackets, exponentiation, variables and functions are added to the expression.
 
-## III.2 – Analysis of an Expression
+## III.2 - Analysis of an Expression
 </br >
 There are several possibilities to analyze and build a mathematical expression. In the case of a recursive descent parser, the expressions are imagined as being recursive structures, that means, such expressions are defined in terms of themselves. Just to have a basic notion about the rules and the ideas used in the development of an evaluator; imagine an expression containing the following elements: +, -, *, /. In this case, the expression can be defined, from the reading of a string, with the utilization of the following basic rules [4]:
 </br>
