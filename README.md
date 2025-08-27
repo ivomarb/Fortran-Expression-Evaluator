@@ -196,7 +196,7 @@ From the analysis of the data presented in section V, it is possible to notice t
 # Other Resources
 
 * The [Calmat: a Fortran Equation Parser Involving Matrix Operations](https://github.com/hassaniriad/calmat) is based on this interpreter.
-* If you are using the Fortran Expression Evaluator please let us know! Emails are in the test.f90 file.
+* If you are using the Fortran Expression Evaluator please let us know! Emails are in the test.f90 file. Mark star ⭐ if you like the project.
 
 # License
 
