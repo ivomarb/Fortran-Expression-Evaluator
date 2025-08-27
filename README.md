@@ -10,30 +10,39 @@
       <a href="#i---introduction">I - Introduction</a>
     </li>
     <li>
-      <a href="#getting-started">Getting started 💗</a>
-      <ul>
+      <a href="#ii---requirements-of-the-expression-evaluator">II – Requirements of the Expression Evaluator</a>
+    </li>
+    <li>
+      <a href="#iii---evaluating-expressions---general-notions<">III – Evaluating Expressions – General Notions</a>
+    </li>
+    <ul>
         <li>
-          <a href="#prerequisites-">Prerequisites 🍪</a>
+          <a href="#iii.1---elements-of-an-expression---precedence">III.1 – Elements of an Expression - Precedence</a>
         </li>
         <li>
-          <a href="#setup-and-deployment-">Setup And Deployment 🔧</a>
+          <a href="#iii.2---analysis-of-an-expression<">III.2 – Analysis of an Expression</a>
         </li>
-      </ul>
+        <li>
+          <a href="#iii.3---parse-tree<">III.3 – Parse Tree</a>
+        </li>
+    </ul>
+    <li>
+      <a href="#iv---the-developed-source-code">IV – The developed Source Code</a>
     </li>
     <li>
-      <a href="#support-my-work">Support my work</a>
+      <a href="#v---comparative-analysis">V – Comparative Analysis</a>
     </li>
     <li>
-      <a href="#showcase-">Showcase 🚀</a>
+      <a href="#vi---conclusions">VI – Conclusions</a>
     </li>
     <li>
-      <a href="#versão-em-português-brazil">Versão em Português :brazil:</a>
+      <a href="#references">References/a>
     </li>
     <li>
-      <a href="#notice">Notice</a>
+      <a href="#other-resources">Other Resources/a>
     </li>
     <li>
-      <a href="#stargazers-over-time">Stargazers over time</a>
+      <a href="#license">License/a>
     </li>
   </ol>
 </details>
