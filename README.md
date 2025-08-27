@@ -10,7 +10,7 @@
       <a href="#i---introduction">I - Introduction</a>
     </li>
     <li>
-      <a href="#ii---requirements-of-the-expression-evaluator">II – Requirements of the Expression Evaluator</a>
+      <a href="#ii---requirements-of-the-expression-evaluator">II - Requirements of the Expression Evaluator</a>
     </li>
     <li>
       <a href="#iii---evaluating-expressions---general-notions<">III – Evaluating Expressions – General Notions</a>
@@ -73,16 +73,16 @@ In face of this new panorama, the developers of “Ajuste” decided to develop 
 </br>
 The DOS version of the software didn’t need an expression evaluator because the source code was made of parts and one of them was the specified user function. These files were put together through a lot file and then compiled via a Fortran compiler [13], which was part of the package. Naturally, this type of resource doesn’t exist in Windows due to the complexity and the size of the compilers for this platform, and also due to problems related to limitations concerning the right of use. Therefore, the natural solution to solve such impediment would be the utilization of a parser, but the only one available for Fortran was not considered adequate to the goals of the program in development. Hence, the only alternative was to develop an expression evaluator for the LABFit. </br >
 
-# II – Requirements of the Expression Evaluator
+# II - Requirements of the Expression Evaluator
 </br >
 In a curve fitting procedure, using the non-linear regression technique, there is an interactive process where an optimum point is obtained through a convergence condition. Such process can involve thousands of iterations, which takes time. This requires that the code for the evaluator of a given expression be efficient and optimized. For the specific case of regression, a parser must attend two requirements. The first one is that, once read the string with the fitting function, the building process of the corresponding arithmetical expression must be done only once, right after the reading of the string. This guarantees great time savings in an iterative process. The second requirement is that, once the expression to be evaluated was interpreted and built, the calculation of such expression for a set of variable values be done in an optimized way, which guarantees the needed speed in a process that may be repeated hundreds of thousands of times.
 
-# III – Evaluating Expressions – General Notions
+# III - Evaluating Expressions – General Notions
 </br >
 The procedure in which a program receives a string containing a numerical expression such as, for example, (4*3)/10^2, and returns the appropriate answer is generically called expression evaluation. Such procedure is the base of all compilers and language interpreters, of mathematical programs and of everything that needs to interpret mathematical expressions in a way that the computer can handle them.
 The algorithm used for the development of the parser was the recursive descent. Such algorithm is described in several books about the C language (for example [7]), and was adapted to Fortran. As the objective of this paper is just to communicate the development of a parser coded in Fortran and to make available its source code (and not to discuss the algorithm itself), it will only be shown the basic ideas of the performed study.
 
-## III.1 – Elements of an Expression - Precedence
+## III.1 - Elements of an Expression - Precedence
 </br >
 For the purposes of the development of a parser, it should initially be stated that mathematical expressions are formed by the following items: </br >
 </br >
@@ -136,14 +136,14 @@ The presented rules are the essence of a recursive descent analyzer, that is bas
 </br>
 There are two basic points to be remembered about this recursive vision of the expressions. First, the precedence of the operators is implicit in the way how the production rules are defined. Second, this method of analysis and building of expressions is quite similar to the way we humans evaluate mathematical expressions.</br >
 
-## III.3 – Parse Tree
+## III.3 - Parse Tree
 </br >
 To illustrate the presented notions it is shown at figure 1 a parse tree referring to the recursive descent process for the expression: – A + 5 * B / (B – 1) [2].
 
 ![fortran1](https://user-images.githubusercontent.com/33180566/32405690-d6ee6492-c148-11e7-909f-21591ee5c3a4.JPG)</br >
 **Figure 1**
 
-## IV – The developed Source Code
+## IV - The developed Source Code
 </br >
 The source code was developed to attend the pre-defined basic requirements in section II for the specific needs of the LABFit, according to the rules that were established in section III. The final result is available at the web site indicated at the Ref. [12].
 </br>
@@ -152,7 +152,7 @@ Basically, the code is constituted of the following parts: 1) the parser itself 
 </br>
 The philosophy used at the development of this parser was the same normally used in the development of modules, in a general way. This means that the Fortran programmers, which will use the developed parser in their programs, don’t have to know its source code. They just need to add the module interpreter.f90 in their projects, define the string and call the subroutine “init”, followed by the calling of the function “evaluate” as it is shown in the example program test.f90.
 
-# V – Comparative Analysis
+# V - Comparative Analysis
 </br >
 During the coding process of the parser its developers got known, through the internet, of another similar one developed in Germany [8], just finished. The performance of this parser was tested by adding it to the LABFit and the results were considered good.  Moreover, it was performed a set of tests to compare the performance of the developed evaluator and of the two other ones ([6] and [8]). The tests results would indicate the appropriated parser to be used at the curve fitting software.</br >
 </br>
@@ -205,7 +205,7 @@ Developed parser time (LABFit): 24.518s</br >
 “Australian parser” time (Stuart Midgley): 76.528s</br >
 “German parser” time (Roland Schmehl): 32.915s</br >
 
-# VI – Conclusions
+# VI - Conclusions
 </br >
 From the analysis of the data presented in section V, it is possible to notice that the developed expression evaluator showed, for the desirable requirements, a performance superior than the other two existing ones, in all performed tests. In this way, the parser was not only used at the software LABFit, but is also being made available on the internet for the free utilization by the interested ones. The parser developers believe, along with the others ones involved in similar projects, in having helped to fill a gap in the libraries of Fortran, which is a language still quite used nowadays by engineers and scientists.</br >
 
