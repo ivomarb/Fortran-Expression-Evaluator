@@ -1,7 +1,3 @@
-!
-!	Some variable, functions etc names in this file are in portuguese.
-!
-
 module precision
 	!Precision:
 	!All real variables defaulted to double precision
@@ -27,7 +23,7 @@ module interpreter
 	character,           dimension(:), pointer,		private :: opmuldiv			!Operator
 	integer,										private	:: ismuldiv = 1
 	character(len=255),								private :: toke
-	integer,										private :: itoke = 1
+	integer,										private :: itoken = 1
 	integer,										private :: ioperations = 1
 	integer,										private :: numberk = 1
 	real(kind=realkind), dimension(:), pointer,		private :: pdata
@@ -49,7 +45,7 @@ contains
 	character(len=5)			   , intent(out)		:: statusflag
 
     !detects errors
-	call identifica(func)
+	call identify(func)
     call convert_b(func)
     
 
@@ -206,12 +202,12 @@ contains
 		return
 	end if
 		
-	itoke = 1
+	itoken = 1
 	isaddsub = 1
 	ismuldiv = 1
 	ioperations = 1
 	numberk = 1
-	toke = stokens(itoke)
+	toke = stokens(itoken)
 	allocate(opaddsub(2))
 	allocate(opmuldiv(2))
 	allocate(number(ntokens))
@@ -239,8 +235,8 @@ contains
 	do while (trim(toke) == '+' .or. trim(toke) == '-') 
 		opaddsub(isaddsub) = trim(toke)
 		isaddsub = isaddsub + 1
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call mul_div()
 			
 		selectcase(opaddsub(isaddsub-1))
@@ -268,8 +264,8 @@ contains
 	do while (trim(toke) == '*' .or. trim(toke) == '/') 
 		opmuldiv(ismuldiv) = trim(toke)
 		ismuldiv = ismuldiv + 1
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call unary()
 
 		selectcase(opmuldiv(ismuldiv-1))
@@ -292,14 +288,14 @@ contains
 	!
 	
 	if (trim(toke) == '-') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call pow()
 		operations(ioperations) = 2
 		ioperations = ioperations + 1
 	else if (trim(toke) == '+') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call pow()
 	else
 		call pow()
@@ -315,8 +311,8 @@ contains
 	call functions()
 
 	if (trim(toke) == '^') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call functions()
 		operations(ioperations) = 7
 		ioperations = ioperations + 1
@@ -329,148 +325,148 @@ contains
 	! Recognizes and processes mathematical functions (sin, cos, log, etc.) and delegates to brackets or variables
 	!	
 	if (trim(toke) == 'sin') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 8
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'cos') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 9
 		ioperations = ioperations + 1
 	
 	else if(trim(toke) == 'tan') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 10
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'asin') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 11
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'acos') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 12
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'atan') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 13
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'sinh') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 14
 		ioperations = ioperations + 1
 	
 	else if(trim(toke) == 'cosh') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()		
 		operations(ioperations) = 15
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'tanh') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 16
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'sind') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 17
 		ioperations = ioperations + 1
 
 	else if(trim(toke) == 'cosd') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 18
 		ioperations = ioperations + 1
 		
 	else if(trim(toke) == 'tand') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()		
 		operations(ioperations) = 19
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'log') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 20
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'log10') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 21
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'nint') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 22
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'anint') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 23
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'aint') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 24
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'exp') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 25
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'sqrt') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 26
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'abs') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 27
 		ioperations = ioperations + 1
 		
 	else if (trim(toke) == 'floor') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call brackets()
 		operations(ioperations) = 28
 		ioperations = ioperations + 1
@@ -487,16 +483,16 @@ contains
 	! Handles expressions inside parentheses, recursively parsing sub-expressions within '(' and ')'
 	!
 	if (trim(toke) == '(') then
-		itoke = itoke + 1
-		toke = stokens(itoke)
+		itoken = itoken + 1
+		toke = stokens(itoken)
 		call add_sub()
 		if (trim(toke) /= ')') then
 			statusflagparser =  'error'
 			return
 		end if					
-		if (itoke < ntokens) then
-			itoke = itoke + 1
-			toke = stokens(itoke)
+		if (itoken < ntokens) then
+			itoken = itoken + 1
+			toke = stokens(itoken)
 		end if
 		if (trim(toke) == '(') then
 			statusflagparser =  'error'
@@ -528,9 +524,9 @@ contains
 		if (trim(toke) == varnames(i)) then
 			operations(ioperations) = 28+i
 			ioperations = ioperations + 1
-			if (itoke < ntokens) then
-				itoke = itoke + 1
-				toke = stokens(itoke)
+			if (itoken < ntokens) then
+				itoken = itoken + 1
+				toke = stokens(itoken)
 			end if
 			return
 		end if
@@ -545,9 +541,9 @@ contains
 	else
 		operations(ioperations) = 1
 		ioperations = ioperations + 1
-		if (itoke < ntokens) then
-			itoke = itoke + 1
-			toke = stokens(itoke)
+		if (itoken < ntokens) then
+			itoken = itoken + 1
+			toke = stokens(itoken)
 		end if
 		numberk = numberk + 1
 	end if
@@ -645,7 +641,7 @@ contains
 	end function evaluate
 
 
-	function evaluate_detalhes (vars) result (answer)
+	function evaluate_details (vars) result (answer)
 	!
 	!	This function will evaluate the expression supplied
 	!
@@ -821,7 +817,7 @@ contains
 
 	answer = pdata(1)
 
-	end function evaluate_detalhes
+	end function evaluate_details
 
 
 	subroutine destroyfunc()
@@ -875,132 +871,132 @@ end module interpreter
 
 
 
-subroutine identifica(funcao)
-character (255) funcao
+subroutine identify(function)
+character (255) function
 character (36) variav
 
 variav = '0123456789abcdefghijklmnopqrstuvwxyz'
 
-nchar = len(trim(funcao))
+nchar = len(trim(function))
 
 do i = 1,nchar
-if(funcao(i:i) == 'A')funcao(i:i) = 'a'
-if(funcao(i:i) == 'B')funcao(i:i) = 'b'
-if(funcao(i:i) == 'C')funcao(i:i) = 'c'
-if(funcao(i:i) == 'D')funcao(i:i) = 'd'
-if(funcao(i:i) == 'E')funcao(i:i) = 'e'
-if(funcao(i:i) == 'F')funcao(i:i) = 'f'
-if(funcao(i:i) == 'G')funcao(i:i) = 'g'
-if(funcao(i:i) == 'H')funcao(i:i) = 'h'
-if(funcao(i:i) == 'I')funcao(i:i) = 'i'
-if(funcao(i:i) == 'J')funcao(i:i) = 'j'
-if(funcao(i:i) == 'K')funcao(i:i) = 'k'
-if(funcao(i:i) == 'L')funcao(i:i) = 'l'
-if(funcao(i:i) == 'M')funcao(i:i) = 'm'
-if(funcao(i:i) == 'N')funcao(i:i) = 'n'
-if(funcao(i:i) == 'O')funcao(i:i) = 'o'
-if(funcao(i:i) == 'P')funcao(i:i) = 'p'
-if(funcao(i:i) == 'Q')funcao(i:i) = 'q'
-if(funcao(i:i) == 'R')funcao(i:i) = 'r'
-if(funcao(i:i) == 'S')funcao(i:i) = 's'
-if(funcao(i:i) == 'T')funcao(i:i) = 't'
-if(funcao(i:i) == 'U')funcao(i:i) = 'u'
-if(funcao(i:i) == 'V')funcao(i:i) = 'v'
-if(funcao(i:i) == 'W')funcao(i:i) = 'w'
-if(funcao(i:i) == 'X')funcao(i:i) = 'x'
-if(funcao(i:i) == 'Y')funcao(i:i) = 'y'
-if(funcao(i:i) == 'Z')funcao(i:i) = 'z'
+if(function(i:i) == 'A')function(i:i) = 'a'
+if(function(i:i) == 'B')function(i:i) = 'b'
+if(function(i:i) == 'C')function(i:i) = 'c'
+if(function(i:i) == 'D')function(i:i) = 'd'
+if(function(i:i) == 'E')function(i:i) = 'e'
+if(function(i:i) == 'F')function(i:i) = 'f'
+if(function(i:i) == 'G')function(i:i) = 'g'
+if(function(i:i) == 'H')function(i:i) = 'h'
+if(function(i:i) == 'I')function(i:i) = 'i'
+if(function(i:i) == 'J')function(i:i) = 'j'
+if(function(i:i) == 'K')function(i:i) = 'k'
+if(function(i:i) == 'L')function(i:i) = 'l'
+if(function(i:i) == 'M')function(i:i) = 'm'
+if(function(i:i) == 'N')function(i:i) = 'n'
+if(function(i:i) == 'O')function(i:i) = 'o'
+if(function(i:i) == 'P')function(i:i) = 'p'
+if(function(i:i) == 'Q')function(i:i) = 'q'
+if(function(i:i) == 'R')function(i:i) = 'r'
+if(function(i:i) == 'S')function(i:i) = 's'
+if(function(i:i) == 'T')function(i:i) = 't'
+if(function(i:i) == 'U')function(i:i) = 'u'
+if(function(i:i) == 'V')function(i:i) = 'v'
+if(function(i:i) == 'W')function(i:i) = 'w'
+if(function(i:i) == 'X')function(i:i) = 'x'
+if(function(i:i) == 'Y')function(i:i) = 'y'
+if(function(i:i) == 'Z')function(i:i) = 'z'
 end do
 
 
 
-if(funcao(nchar:nchar) == '-' .or. funcao(nchar:nchar) == '+' .or. funcao(nchar:nchar) == '/' .or. funcao(nchar:nchar) == '*') then
-  funcao = 'erro'
+if(function(nchar:nchar) == '-' .or. function(nchar:nchar) == '+' .or. function(nchar:nchar) == '/' .or. function(nchar:nchar) == '*') then
+  function = 'erro'
   return
 end if
 
-if(funcao(1:1) == '*' .or. funcao(1:1) == '/') then
-  funcao = 'erro'
+if(function(1:1) == '*' .or. function(1:1) == '/') then
+  function = 'erro'
   return
 end if
 
 do i = 1, nchar-1
-  if(funcao(i:i+1) == '--' .or. funcao(i:i+1) == '-+' .or. funcao(i:i+1) == '-/' .or. funcao(i:i+1) == '-*') funcao = 'erro'
-  if(funcao(i:i+1) == '+-' .or. funcao(i:i+1) == '++' .or. funcao(i:i+1) == '+/' .or. funcao(i:i+1) == '+*') funcao = 'erro'
-  if(funcao(i:i+1) == '*-' .or. funcao(i:i+1) == '*+' .or. funcao(i:i+1) == '*/') funcao = 'erro'
-  if(funcao(i:i+1) == '/-' .or. funcao(i:i+1) == '/+' .or. funcao(i:i+1) == '//' .or. funcao(i:i+1) == '/*') funcao = 'erro'
+  if(function(i:i+1) == '--' .or. function(i:i+1) == '-+' .or. function(i:i+1) == '-/' .or. function(i:i+1) == '-*') function = 'erro'
+  if(function(i:i+1) == '+-' .or. function(i:i+1) == '++' .or. function(i:i+1) == '+/' .or. function(i:i+1) == '+*') function = 'erro'
+  if(function(i:i+1) == '*-' .or. function(i:i+1) == '*+' .or. function(i:i+1) == '*/') function = 'erro'
+  if(function(i:i+1) == '/-' .or. function(i:i+1) == '/+' .or. function(i:i+1) == '//' .or. function(i:i+1) == '/*') function = 'erro'
 end do
-if(trim(funcao) == 'erro') return
+if(trim(function) == 'erro') return
 
 do i = 1, nchar-1
   do j = 1, 36
-    if(funcao(i:i+1) == ')'//variav(j:j)) funcao = 'erro'
+    if(function(i:i+1) == ')'//variav(j:j)) function = 'erro'
   end do
 end do
-if(trim(funcao) == 'erro') return
+if(trim(function) == 'erro') return
 
 do i = 1, nchar-1
   do j = 1, 36
-    if(funcao(i:i) == '0' .or. funcao(i:i) == 'n' .or. funcao(i:i) == 's' .or. funcao(i:i) == 'h' .or. funcao(i:i) == 'd' .or. funcao(i:i) == 'g' .or. funcao(i:i) == 't' .or. funcao(i:i) == 'p' .or. funcao(i:i) == 'r') then
+    if(function(i:i) == '0' .or. function(i:i) == 'n' .or. function(i:i) == 's' .or. function(i:i) == 'h' .or. function(i:i) == 'd' .or. function(i:i) == 'g' .or. function(i:i) == 't' .or. function(i:i) == 'p' .or. function(i:i) == 'r') then
       !Don't test, it could be one of the defined functions
 	else
-      if(funcao(i:i+1) == variav(j:j)//'(') funcao = 'erro'
+      if(function(i:i+1) == variav(j:j)//'(') function = 'erro'
     end if
   end do
 end do
-if(trim(funcao) == 'erro') return
+if(trim(function) == 'erro') return
 
 
 if(nchar >= 5) then
 do i = 1,nchar-4
 
-if(funcao(i:i+4) == 'log10') then
+if(function(i:i+4) == 'log10') then
   j = i+5
   19 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 19
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+4) == 'anint') then
+if(function(i:i+4) == 'anint') then
   j = i+5
   20 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 20
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+4) == 'floor') then
+if(function(i:i+4) == 'floor') then
   j = i+5
   21 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 21
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
@@ -1014,206 +1010,206 @@ end if
 if(nchar >= 4) then
 do i = 1,nchar-3
 
-if(funcao(i:i+3) == 'asin') then
+if(function(i:i+3) == 'asin') then
   j = i+4
   7 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 7
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'acos') then
+if(function(i:i+3) == 'acos') then
   j = i+4
   8 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 8
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'atan') then
+if(function(i:i+3) == 'atan') then
   j = i+4
   9 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 9
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'sinh') then
+if(function(i:i+3) == 'sinh') then
   j = i+4
   10 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 10
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'cosh') then
+if(function(i:i+3) == 'cosh') then
   j = i+4
   11 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 11
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'tanh') then
+if(function(i:i+3) == 'tanh') then
   j = i+4
   12 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 12
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'sind') then
+if(function(i:i+3) == 'sind') then
   j = i+4
   13 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 13
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'cosd') then
+if(function(i:i+3) == 'cosd') then
   j = i+4
   14 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 14
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'tand') then
+if(function(i:i+3) == 'tand') then
   j = i+4
   15 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 15
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'nint') then
+if(function(i:i+3) == 'nint') then
   j = i+4
   16 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 16
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'aint') then
+if(function(i:i+3) == 'aint') then
   j = i+4
   17 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 17
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+3) == 'sqrt') then
+if(function(i:i+3) == 'sqrt') then
   j = i+4
   18 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 18
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
@@ -1227,112 +1223,112 @@ end if
 if(nchar >= 3) then
 do i = 1,nchar-2
 
-if(funcao(i:i+2) == 'sin') then
+if(function(i:i+2) == 'sin') then
   j = i+3
   1 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 1
   end if
-  if(funcao(j:j) == 'd' .or. funcao(j:j) == 'h') goto 51
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) == 'd' .or. function(j:j) == 'h') goto 51
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
   51 continue
 end if
 
-if(funcao(i:i+2) == 'cos') then
+if(function(i:i+2) == 'cos') then
   j = i+3
   2 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 2
   end if
-  if(funcao(j:j) == 'd' .or. funcao(j:j) == 'h') goto 52
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) == 'd' .or. function(j:j) == 'h') goto 52
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
   52 continue
 end if
 
-if(funcao(i:i+2) == 'tan') then
+if(function(i:i+2) == 'tan') then
   j = i+3
   3 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 3
   end if
-  if(funcao(j:j) == 'd' .or. funcao(j:j) == 'h') goto 53
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) == 'd' .or. function(j:j) == 'h') goto 53
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
   53 continue
 end if
 
-if(funcao(i:i+2) == 'log') then
+if(function(i:i+2) == 'log') then
   j = i+3
   4 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 4
   end if
-  if(j < (nchar-1) .and. funcao(j:j+1) == '10') goto 54
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(j < (nchar-1) .and. function(j:j+1) == '10') goto 54
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
   54 continue
 end if
 
-if(funcao(i:i+2) == 'exp') then
+if(function(i:i+2) == 'exp') then
   j = i+3
   5 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 5
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
 
-if(funcao(i:i+2) == 'abs') then
+if(function(i:i+2) == 'abs') then
   j = i+3
   6 continue
   if(j >= nchar) then
-    funcao = 'erro'
+    function = 'erro'
 	return
   end if
-  if(funcao(j:j) == ' ') then
+  if(function(j:j) == ' ') then
     j = j + 1
 	goto 6
   end if
-  if(funcao(j:j) /= '(') then
-    funcao = 'erro'
+  if(function(j:j) /= '(') then
+    function = 'erro'
 	return
   end if
 end if
