@@ -79,7 +79,7 @@ Few years ago, professors of the Instrumentation Group for the Teaching of Physi
 </br>
 In face of this new panorama, the developers of “Ajuste” decided to develop a new version of this program for the Windows platform and it was named “LAB Fit Curve Fitting Software” (LABFit) [9]. As it’s known, a curve fitting software normally has a library with a set of pre-defined functions and an option for the users to be able to write their own fitting function, which requires a specific code called “expression evaluator” (parser) for the calculation of the function for a given set of values of the independent variables. Beyond the study of new commands of Fortran 90 [3] and of the graphical part ([5] and [10]), during the migration process there was the need to solve one problem: how to obtain an expression evaluator, in open source, developed in Fortran, whose implementation was adequate to the necessities of the program in development. In reality, repetitive searches on the internet ended in only one evaluator coded in Fortran, which has been developed in Australia [6]. But the “Australian parser “, although it was of easy incorporation into the program and useful in many applications, was prohibitively slow for the required purposes: non-linear regression. During the search for a result in a curve fitting program,  the convergence process may take hundreds of thousands of iterations and it requires an extremely efficient and optimized code for the evaluation of parameters of the fitting function.</br >
 </br>
-The DOS version of the software didn’t need an expression evaluator because the source code was made of parts and one of them was the specified user function. These files were put together through a lot file and then compiled via a Fortran compiler [13], which was part of the package. Naturally, this type of resource doesn’t exist in Windows due to the complexity and the size of the compilers for this platform, and also due to problems related to limitations concerning the right of use. Therefore, the natural solution to solve such impediment would be the utilization of a parser, but the only one available for Fortran was not considered adequate to the goals of the program in development. Hence, the only alternative was to develop an expression evaluator for the LABFit. </br >
+The DOS version of the software didn’t need an expression evaluator because the source code was made of parts and one of them was the specified user function. These files were put together through a lot file and then compiled via a Fortran compiler [12], which was part of the package. Naturally, this type of resource doesn’t exist in Windows due to the complexity and the size of the compilers for this platform, and also due to problems related to limitations concerning the right of use. Therefore, the natural solution to solve such impediment would be the utilization of a parser, but the only one available for Fortran was not considered adequate to the goals of the program in development. Hence, the only alternative was to develop an expression evaluator for the LABFit. </br >
 
 # II - Requirements of the Expression Evaluator
 </br >
@@ -153,7 +153,7 @@ To illustrate the presented notions it is shown at figure 1 a parse tree referri
 
 ## IV - The developed Source Code
 </br >
-The source code was developed to attend the pre-defined basic requirements in section II for the specific needs of the LABFit, according to the rules that were established in section III. The final result is available at the web site indicated at the Ref. [12].
+The source code was developed to attend the pre-defined basic requirements in section II for the specific needs of the LABFit, according to the rules that were established in section III. The final result is available at the web site indicated at the Ref. [11].
 </br>
 </br>
 Basically, the code is constituted of the following parts: 1) the parser itself comprised in a module called interpreter.f90, 2) the main program, called test.f90, containing some examples. Once the main program has the information about the string, it calls a subroutine of the module interpreter.f90, called “init”, whose function is to make the interpretation, that means, the building of the mathematical expression. With this task accomplished, the function that evaluates the expression, called “evaluate”, is evoked and the value of the expression is returned for a set of variable values. The process of evaluating an expression can be repeated for other set of variables, without the need of rebuilding the expression, for how many times it may be necessary. It is also possible, in the same execution, to change the string and to repeat the interpretation and evaluation processes for the new specified expression. To do so, it is only needed to call the subroutine named “destroyfunc”, before informing the new string and repeating the process previously described.</br >
@@ -238,9 +238,9 @@ From the analysis of the data presented in section V, it is possible to notice t
         http://labfit.net.</br >
 [10] - W. P. Silva et al, VFortran Tutorial, online, available on the internet at     
            http://www.extension.hpg.com.br/.</br >
-[12] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
+[11] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
           https://github.com/ivomarb/Fortran-Expression-Evaluator/tree/master.</br >
-[13] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
+[12] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
 
 
 # Other Resources
