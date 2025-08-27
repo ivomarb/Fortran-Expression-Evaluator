@@ -227,7 +227,7 @@ contains
 	
 	subroutine add_sub ()
 	!
-	! Enter description here
+	! Handles addition and subtraction operations, recursively parsing terms separated by '+' or '-'
 	!	
 		
 	call mul_div ()
@@ -256,7 +256,7 @@ contains
 
 	subroutine mul_div ()
 	!
-	! Enter description here
+	! Handles multiplication and division operations, recursively parsing factors separated by '*' or '/'
 	!
 
 	call unary()
@@ -284,7 +284,7 @@ contains
 	
 	subroutine unary()
 	!
-	! Enter description here
+	! Handles unary plus and minus operators, recursively parsing the next power expression
 	!
 	
 	if (trim(toke) == '-') then
@@ -305,7 +305,7 @@ contains
 
 	subroutine pow ()
 	!
-	! Enter description here
+	! Handles exponentiation, recursively parsing expressions with the '^' operator
 	!
 
 	call functions()
@@ -322,7 +322,7 @@ contains
 
 	subroutine functions ()
 	!
-	! Enter description here
+	! Recognizes and processes mathematical functions (sin, cos, log, etc.) and delegates to brackets or variables
 	!	
 	if (trim(toke) == 'sin') then
 		itoke = itoke + 1
@@ -480,7 +480,7 @@ contains
 
 	subroutine brackets()
 	!
-	! Enter description here
+	! Handles expressions inside parentheses, recursively parsing sub-expressions within '(' and ')'
 	!
 	if (trim(toke) == '(') then
 		itoke = itoke + 1
@@ -506,7 +506,7 @@ contains
 
 	subroutine recog_vars ()
 	!
-	! Enter description here
+	! Recognizes variables or numeric constants, and updates the operations stack accordingly
 	!
 		
 	integer										:: i
