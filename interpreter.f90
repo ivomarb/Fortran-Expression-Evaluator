@@ -1363,28 +1363,28 @@ ilength = len(trim(text))
 
   do k = 1,(ilength-1)
    
-   !converte ^ em **, caso o usu�rio digite ^
+   !converts ^ to **, in case the user has typed ^
    if(text(k:k) == '^') then
     text = text(1:k-1)//'**'//text(k+1:ilength)
 	ilength = ilength + 1
 	item = 1
    end if
 
-   !converte ln em log
+   !converts ln to log
    if(text(k:k+1) == 'ln' .or. text(k:k+1) == 'Ln' .or.text(k:k+1) == 'lN' .or.text(k:k+1) == 'LN') then
     text = text(1:k-1)//'log'//text(k+2:ilength)
 	ilength = ilength + 1
 	item = 1
    end if
 
-   !converte pi em 3.14159
+   !converts pi to 3.14159
    if(text(k:k+1) == 'pi' .or. text(k:k+1) == 'Pi' .or. text(k:k+1) == 'pI' .or. text(k:k+1) == 'PI') then
     text = text(1:k-1)//'3.14159'//text(k+2:ilength)
 	ilength = ilength + 5
 	item = 1
    end if
 
-   !converte v�rgula em ponto, caso o usu�rio digite v�rgula
+   !converts comma to dot, in case the user has typed a comma
    if(text(k:k) == ',') then
     text = text(1:k-1)//'.'//text(k+1:ilength)
 	item = 1
