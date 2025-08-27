@@ -164,7 +164,7 @@ The philosophy used at the development of this parser was the same normally used
 </br >
 During the coding process of the parser its developers got known, through the internet, of another similar one developed in Germany [8], just finished. The performance of this parser was tested by adding it to the LABFit and the results were considered good.  Moreover, it was performed a set of tests to compare the performance of the developed evaluator and of the two other ones ([6] and [8]). The tests results would indicate the appropriated parser to be used at the curve fitting software.</br >
 </br>
-The tests consisted on the realization of five million iterations for twenty five distinct expressions, measuring the time that each evaluator took to perform such task. The tests were performed in a computer Intel Pentium III, 128 Mbytes of RAM memory and the compilation was done at the Compaq Visual Fortran (CVF 6.5) studio, using the QuickWin Application option. The elapsed time for the direct calculation, which takes the smallest execution time, of each compiled expression was also measured in order to have an idea of the slowness of a Fortran coded parser execution. The performance of the evaluators was analyzed only in terms of the elapsed time for the tasks execution, because the numerical results of all of them were equivalent and compatible with the numerical result of the compiled expression. The complete report for all the expressions was made available on the internet [11]. Next, it will be shown the obtained results for five, among the twenty five, tested expressions. 
+The tests consisted on the realization of five million iterations for twenty five distinct expressions, measuring the time that each evaluator took to perform such task. The tests were performed in a computer Intel Pentium III, 128 Mbytes of RAM memory and the compilation was done at the Compaq Visual Fortran (CVF 6.5) studio, using the QuickWin Application option. The elapsed time for the direct calculation, which takes the smallest execution time, of each compiled expression was also measured in order to have an idea of the slowness of a Fortran coded parser execution. The performance of the evaluators was analyzed only in terms of the elapsed time for the tasks execution, because the numerical results of all of them were equivalent and compatible with the numerical result of the compiled expression. Next, it will be shown the obtained results for five, among the twenty five, tested expressions. 
 </br>
 </br>
 1st Expression:</br >
@@ -238,8 +238,6 @@ From the analysis of the data presented in section V, it is possible to notice t
         http://labfit.net.</br >
 [10] - W. P. Silva et al, VFortran Tutorial, online, available on the internet at     
            http://www.extension.hpg.com.br/.</br >
-[11] - I. B. Soares, J. L. Nascimento, W. P. Silva, Full Report of the Performed Tests, online, 
-          available on the Internet at http://www.extension.hpg.com.br/.</br >
 [12] - I. B. Soares, J. L. Nascimento, W. P. Silva, Parser Source Code, online, available on the internet at 
           https://github.com/ivomarb/Fortran-Expression-Evaluator/tree/master.</br >
 [13] - University of Waterloo, WATFOR77.EXE V 3.1, August 1989.</br >
