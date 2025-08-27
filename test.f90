@@ -83,15 +83,16 @@ write(*,*) 'Answer Obtained Through the Direct Calculation: ',(x+y+z+x*y+x*z+y*z
 
 write(*,*)' '
 
-elapsedtime = timef()
+call cpu_time(t0)
 
 !Five millions iterations
 do i = 1, 5000000
 	answer = (x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*cos(x)+y*sin(y)+z*tan(z)*2/(x+y+z+x*y+x*z+y*z+x/y+x/z+y/z+x*cos(x)+y*sin(y)+z*tan(z))*3+sqrt(x*y*z+x+y+z)*log10(sqrt(x*2+y*2+z*2)+x+y+z))
 end do
 
-elapsedtime = timef()
-write(*,*) 'Elapsed Time at the Direct Calculation (five millions iterations): ',elapsedtime, 's.'
+call cpu_time(t1)
+time_direct = t1 - t0
+write(*,*) 'Elapsed Time at the Direct Calculation (five millions iterations): ',time_direct, 's.'
 write(*,*)' '
 
 !
@@ -106,13 +107,15 @@ call init (func, variables, statusflag)
 if(statusflag == 'ok') Then
   write(*,*)'Wait!'
   !Five millions iterations
+  call cpu_time(t0)
   do i = 1, 5000000
   	answer = evaluate (variablesvalues)
   end do
-  elapsedtime1 = TIMEF()
+  call cpu_time(t1)
+  time_evaluator = t1 - t0
   write(*,*) 'Answer Obtained Through the Evaluator ', answer
   write(*,*)' '
-  write(*,*) 'Elapsed Time at the Evaluation (five millions iterations): ',elapsedtime1 - elapsedtime,' s.'
+  write(*,*) 'Elapsed Time at the Evaluation (five millions iterations): ',time_evaluator,' s.'
 else
   write(*,*)'Error detected'
 end if
@@ -154,15 +157,16 @@ write(*,*)' '
 write(*,*) 'Answer Obtained Through the Direct Calculation: ', a+b*x1
 write(*,*)' '
 
-elapsedtime2 = timef()
+call cpu_time(t0)
 
 !Five millions iterations
 do i = 1, 5000000
 	answer = a+b*x1
 end do
 
-elapsedtime3 = timef()
-write(*,*) 'Elapsed Time at the Direct Calculation (five millions iterations): ',elapsedtime3 - elapsedtime2, 's.'
+call cpu_time(t1)
+time_direct = t1 - t0
+write(*,*) 'Elapsed Time at the Direct Calculation (five millions iterations): ',time_direct, 's.'
 write(*,*)' '
 
 !
@@ -177,13 +181,16 @@ call init (func, variables, statusflag)
 if(statusflag == 'ok') Then
   write(*,*)'Wait!'
   !Five millions iterations
+  
+  call cpu_time(t0)
   do i = 1, 5000000
 	answer = evaluate (variablesvalues)
   end do
-  elapsedtime4 = TIMEF()
+  call cpu_time(t1)
+  time_evaluator = t1 - t0
   write(*,*) 'Answer Obtained Through the Evaluator ', answer
   write(*,*)' '
-  write(*,*) 'Elapsed Time at the Evaluation (five millions iterations): ',elapsedtime4 - elapsedtime3,' s.'
+  write(*,*) 'Elapsed Time at the Evaluation (five millions iterations): ',time_evaluator,' s.'
 else
   write(*,*)'Error detected'
 end if
