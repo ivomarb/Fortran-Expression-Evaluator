@@ -1,3 +1,7 @@
+!
+!	Some variable, functions etc names in this file are in portuguese.
+!
+
 module precision
 	!Precision:
 	!All real variables defaulted to double precision
