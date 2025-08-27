@@ -6,7 +6,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/ivomarb/Fortran-Expression-Evaluator?color=ffcc66&style=for-the-badge)
 [![GitHub forks](https://img.shields.io/github/forks/ivomarb/Fortran-Expression-Evaluator?style=for-the-badge)](https://github.com/ivomarb/Fortran-Expression-Evaluator/network)
 [![GitHub issues](https://img.shields.io/github/issues/ivomarb/Fortran-Expression-Evaluator?color=ffcc66&style=for-the-badge)](https://github.com/ivomarb/Fortran-Expression-Evaluator/issues)
-[![GitHub license](https://img.shields.io/github/license/ivomarb/Fortran-Expression-Evaluator?style=for-the-badge)](https://github.com/ivomarb/Fortran-Expression-Evaluator/blob/master/LICENSE)/
+[![GitHub license](https://img.shields.io/github/license/ivomarb/Fortran-Expression-Evaluator?style=for-the-badge)](https://github.com/ivomarb/Fortran-Expression-Evaluator/blob/master/LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ivomarb?color=ffcc66&logo=twitter&logoColor=ffffff&style=for-the-badge)](https://twitter.com/ivomarbrito)
 
 
