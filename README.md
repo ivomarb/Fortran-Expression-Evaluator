@@ -15,6 +15,7 @@
 <a href="https://github.com/ivomarb/Fortran-Expression-Evaluator/issues"><img src="https://img.shields.io/github/issues/abhisheknaiidu/awesome-github-profile-readme" alt="Issues Badge"/></a>
 <a href="https://github.com/ivomarb/Fortran-Expression-Evaluator/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/abhisheknaiidu/awesome-github-profile-readme?color=2b9348"></a>
 <a href="https://github.com/ivomarb/Fortran-Expression-Evaluator/blob/master/LICENSE"><img src="https://img.shields.io/github/license/abhisheknaiidu/awesome-github-profile-readme?color=2b9348" alt="License Badge"/></a>
+<a href="https://twitter.com/ivomarbrito" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a>
 
 <!-- TABLE OF CONTENTS -->
 <details>
